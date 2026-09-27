@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Frame</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #002147;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 4px;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid transparent;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            background-color: #1e3a8a;
+            color: #f8fafc;
+            border-color: #60a5fa;
+        }
+
+        .nav-label {
+            color: #94a3b8;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <span class="nav-label">Navigation:</span>
+        <!-- Note target="mainFrame" ensures content opens strictly inside the 3rd frame -->
+        <a href="main.html" target="mainFrame" class="nav-link">Home</a>
+        <a href="about.html" target="mainFrame" class="nav-link">About</a>
+        <a href="gallery.html" target="mainFrame" class="nav-link">Gallery</a>
+    </nav>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Banner Header</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            color: #0f172a;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            border-bottom: 4px solid #002147;
+            overflow: hidden;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Circular Logo Placeholder */
+        .logo-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #002147;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 22px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+            border: 2px solid #ffffff;
+            flex-shrink: 0;
+        }
+
+        .title-area {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: #002147;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            color: #475569;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .university-tag {
+            display: inline-block;
+            background-color: #e2e8f0;
+            color: #002147;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-left: 6px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+        <!-- Circular Logo Placeholder -->
+        <div class="logo-badge" title="GGITS Logo Placeholder">GG</div>
+        
+        <div class="title-area">
+            <h1>Gyan Ganga Institute of Technology and Sciences</h1>
+            <p class="subtitle">
+                Internet &amp; Web Technology (IWT) | 5th Semester 
+                <span class="university-tag">RGPV University</span>
+            </p>
+        </div>
+    </header>
+</body>
+</html>

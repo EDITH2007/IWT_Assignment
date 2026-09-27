@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Content - IWT Practical</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+            padding: 24px;
+            line-height: 1.6;
+        }
+
+        .welcome-card {
+            background-color: #ffffff;
+            border-left: 5px solid #002147;
+            border-radius: 6px;
+            padding: 18px 24px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #002147;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #475569;
+            font-size: 14px;
+        }
+
+        .map-section {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+            text-align: center;
+        }
+
+        .map-section h3 {
+            color: #002147;
+            font-size: 16px;
+            margin-bottom: 12px;
+            text-align: left;
+        }
+
+        .map-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Hit Counter Box Styling */
+        .counter-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+            border: 2px solid #002147;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 33, 71, 0.08);
+        }
+
+        .counter-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 8px;
+        }
+
+        .counter-header h3 {
+            color: #002147;
+            font-size: 17px;
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .counter-card {
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 14px 18px;
+            text-align: center;
+        }
+
+        .counter-title {
+            font-size: 13px;
+            color: #475569;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .counter-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #002147;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .badge-session {
+            background-color: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .badge-local {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Header Section -->
+    <div class="welcome-card">
+        <h2>Welcome to IWT Practical Lab Workspace</h2>
+        <p>
+            This web application demonstrates fundamental client-side web technologies: 
+            <b>HTML Framesets</b> for layout, <b>Client-Side Image Maps</b> for interactive navigation, 
+            and <b>Session &amp; Local Storage</b> for client-side state management without a backend server.
+        </p>
+    </div>
+
+    <!-- =========================================================================
+         CLIENT-SIDE IMAGE MAP EXPLANATION (FOR PROFESSOR REVIEW):
+         An Image Map binds clickable regions directly onto an image:
+         1. <img usemap="#campusMap"> links the graphic image to the map definition.
+         2. <map name="campusMap"> contains individual <area> elements.
+         3. Each <area> specifies:
+            - shape="circle" coords="centerX, centerY, radius"
+            - shape="rect" coords="leftX, topY, rightX, bottomY"
+            - href="targetPage.html" target="mainFrame" to load pages into mainFrame.
+       ========================================================================= -->
+    <div class="map-section">
+        <h3>Interactive Campus Image Map</h3>
+        
+        <img src="map-image.svg" usemap="#campusMap" alt="Interactive GGITS Campus Map" class="map-image">
+
+        <map name="campusMap">
+            <!-- Circle Area: Center (110, 110), Radius 85 -->
+            <area shape="circle" coords="110,110,85" href="about.html" alt="About Us Zone" target="mainFrame" title="Click to view About Us">
+            
+            <!-- Rect Area: Top-Left (260, 25) to Bottom-Right (560, 195) -->
+            <area shape="rect" coords="260,25,560,195" href="gallery.html" alt="Gallery Zone" target="mainFrame" title="Click to view Gallery">
+        </map>
+    </div>
+
+    <!-- Hit Counter Display Box -->
+    <div class="counter-container">
+        <div class="counter-header">
+            <h3>Client-Side Visitor Hit Counter</h3>
+        </div>
+        
+        <div class="counter-grid">
+            <div class="counter-card">
+                <div class="counter-title">Visits in this browser session</div>
+                <div id="sessionCountDisplay" class="counter-value">0</div>
+                <span class="badge badge-session">sessionStorage (Resets on tab close)</span>
+            </div>
+            
+            <div class="counter-card">
+                <div class="counter-title">Total visits recorded on this computer</div>
+                <div id="localCountDisplay" class="counter-value">0</div>
+                <span class="badge badge-local">localStorage (Permanent storage)</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         HIT COUNTER SCRIPT EXPLANATION (FOR PROFESSOR REVIEW):
+         This inline JavaScript tracks visitor hits using Web Storage API:
+         1. sessionStorage: Stores data only for the duration of the current page session.
+            - getItem('sessionVisits') reads existing session count.
+            - Increments by 1 every time main.html loads.
+            - Automatically cleared when tab/browser is closed.
+         2. localStorage: Stores data permanently in the browser across sessions.
+            - getItem('totalVisits') reads persistent count.
+            - Increments by 1 every time main.html loads.
+         3. document.getElementById().textContent writes the calculated values to the DOM.
+       ========================================================================= -->
+    <script>
+        (function updateHitCounter() {
+            // 1. Session Storage Logic (Session Variable)
+            let sessionVisits = sessionStorage.getItem('sessionVisits');
+            if (sessionVisits === null) {
+                sessionVisits = 1;
+            } else {
+                sessionVisits = parseInt(sessionVisits, 10) + 1;
+            }
+            sessionStorage.setItem('sessionVisits', sessionVisits);
+            document.getElementById('sessionCountDisplay').textContent = sessionVisits;
+
+            // 2. Local Storage Logic (Permanent Counter)
+            let totalVisits = localStorage.getItem('totalVisits');
+            if (totalVisits === null) {
+                totalVisits = 1;
+            } else {
+                totalVisits = parseInt(totalVisits, 10) + 1;
+            }
+            localStorage.setItem('totalVisits', totalVisits);
+            document.getElementById('localCountDisplay').textContent = totalVisits;
+        })();
+    </script>
+
+</body>
+</html>

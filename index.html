@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IWT Practical Assignment - GGITS RGPV 5th Sem</title>
+</head>
+
+<!-- =========================================================================
+     HTML FRAMESET EXPLANATION (FOR PROFESSOR REVIEW):
+     The <frameset> tag divides the browser window into multiple rectangular regions 
+     called frames. Each frame loads a separate HTML document using the <frame> tag.
+     
+     Here:
+     - rows="18%,10%,72%" splits the viewport height into 3 horizontal sections:
+       1) Top Banner (18% height) -> loads banner.html (name="bannerFrame")
+       2) Navigation Bar (10% height) -> loads nav.html (name="navFrame")
+       3) Main Content Area (72% height) -> loads main.html (name="mainFrame")
+     - target="mainFrame" in links allows loading new pages inside the 3rd frame 
+       without refreshing the banner or navigation bar.
+   ========================================================================= -->
+
+<frameset rows="18%,10%,72%" frameborder="1" border="2" bordercolor="#002147">
+    <frame src="banner.html" name="bannerFrame" scrolling="no" noresize="noresize" title="Header Banner Frame">
+    <frame src="nav.html" name="navFrame" scrolling="no" noresize="noresize" title="Navigation Bar Frame">
+    <frame src="main.html" name="mainFrame" scrolling="auto" title="Main Content Frame">
+    
+    <noframes>
+        <body>
+            <p>Your browser does not support HTML framesets. Please use a browser that supports frames to view this RGPV IWT assignment.</p>
+        </body>
+    </noframes>
+</frameset>
+</html>
