@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery - GGITS IWT Practical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,81 +15,91 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 24px;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #FBF7EE;
+            color: #2A2416;
+            padding: 32px 36px;
+            line-height: 1.65;
         }
 
         .card {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-top: 5px solid #002147;
-            border-radius: 8px;
-            padding: 24px;
-            max-width: 700px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            background-color: #FFFFFF;
+            border: 1px solid #D8CEB9;
+            border-top: 3px solid #A66B1E;
+            border-radius: 0;
+            padding: 28px 32px;
+            max-width: 680px;
+            box-shadow: none;
         }
 
         h2 {
-            color: #002147;
+            font-family: 'Merriweather', Georgia, serif;
+            color: #2A2416;
             font-size: 22px;
-            margin-bottom: 12px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.2px;
         }
 
         .zone-badge {
-            display: inline-block;
-            background-color: #f1f5f9;
-            color: #334155;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 13px;
-            font-weight: 700;
-            border: 1px solid #cbd5e1;
-            margin-bottom: 16px;
+            display: block;
+            background-color: #F5EFE0;
+            color: #8C5919;
+            padding: 6px 12px;
+            border-left: 2px solid #A66B1E;
+            border-radius: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 20px;
         }
 
         p {
-            color: #475569;
+            color: #423B2D;
             font-size: 14px;
             margin-bottom: 16px;
+            max-width: 65ch;
+            text-align: left;
         }
 
         .gallery-preview-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-            margin: 16px 0 20px 0;
+            gap: 14px;
+            margin: 20px 0 24px 0;
         }
 
         .gallery-box {
-            background-color: #e2e8f0;
-            border-radius: 6px;
-            height: 70px;
+            background-color: #F5EFE0;
+            border-radius: 0;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #002147;
-            font-weight: bold;
-            font-size: 12px;
-            border: 1px dashed #94a3b8;
+            color: #2A2416;
+            font-family: 'Merriweather', Georgia, serif;
+            font-weight: 700;
+            font-size: 12.5px;
+            border: 1px solid #D8CEB9;
         }
 
         .back-btn {
             display: inline-block;
-            background-color: #002147;
-            color: #ffffff;
+            background-color: transparent;
+            color: #A66B1E;
+            border: 1px solid #A66B1E;
             text-decoration: none;
             padding: 8px 18px;
-            border-radius: 4px;
-            font-size: 14px;
+            border-radius: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 13px;
             font-weight: 600;
-            transition: background-color 0.2s ease;
+            transition: background-color 0.15s ease, color 0.15s ease;
         }
 
         .back-btn:hover {
-            background-color: #1e3a8a;
+            background-color: #A66B1E;
+            color: #FBF7EE;
         }
     </style>
 </head>

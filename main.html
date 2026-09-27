@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Content - IWT Practical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,126 +15,145 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8fafc;
-            color: #1e293b;
-            padding: 24px;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #FBF7EE;
+            color: #2A2416;
+            padding: 32px 36px;
+            line-height: 1.65;
+            max-width: 920px;
         }
 
         .welcome-card {
-            background-color: #ffffff;
-            border-left: 5px solid #002147;
-            border-radius: 6px;
-            padding: 18px 24px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+            background-color: #F5EFE0;
+            border-left: 3px solid #A66B1E;
+            border-radius: 0;
+            padding: 20px 24px;
+            margin-bottom: 32px;
+            box-shadow: none;
         }
 
         h2 {
-            color: #002147;
-            font-size: 20px;
+            font-family: 'Merriweather', Georgia, serif;
+            color: #2A2416;
+            font-size: 21px;
+            font-weight: 700;
             margin-bottom: 8px;
+            letter-spacing: -0.2px;
         }
 
         p {
-            color: #475569;
+            color: #59503E;
             font-size: 14px;
+            max-width: 75ch;
+            text-align: left;
         }
 
         .map-section {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 24px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-            text-align: center;
+            background-color: #FFFFFF;
+            border: 1px solid #D8CEB9;
+            border-radius: 0;
+            padding: 24px;
+            margin-bottom: 36px;
+            box-shadow: none;
+            text-align: left;
         }
 
         .map-section h3 {
-            color: #002147;
+            font-family: 'Merriweather', Georgia, serif;
+            color: #2A2416;
             font-size: 16px;
-            margin-bottom: 12px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #EFE8D6;
             text-align: left;
         }
 
         .map-image {
             max-width: 100%;
             height: auto;
-            border-radius: 6px;
+            border-radius: 0;
+            border: 1px solid #EFE8D6;
             display: block;
             margin: 0 auto;
         }
 
-        /* Hit Counter Box Styling */
+        /* Hit Counter Stat Row Styling */
         .counter-container {
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            border: 2px solid #002147;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 33, 71, 0.08);
+            background: transparent;
+            border: none;
+            border-top: 1px solid #D8CEB9;
+            border-bottom: 1px solid #D8CEB9;
+            border-radius: 0;
+            padding: 24px 0;
+            box-shadow: none;
+            margin-top: 36px;
         }
 
         .counter-header {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            border-bottom: 1px solid #cbd5e1;
-            padding-bottom: 8px;
+            margin-bottom: 16px;
+            border-bottom: none;
+            padding-bottom: 0;
         }
 
         .counter-header h3 {
-            color: #002147;
-            font-size: 17px;
+            font-family: 'Merriweather', Georgia, serif;
+            color: #2A2416;
+            font-size: 16px;
+            font-weight: 700;
         }
 
         .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 16px;
+            display: flex;
+            gap: 48px;
+            align-items: flex-start;
+            flex-wrap: wrap;
         }
 
         .counter-card {
-            background-color: #ffffff;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            padding: 14px 18px;
-            text-align: center;
+            background-color: transparent;
+            border: none;
+            border-radius: 0;
+            padding: 0;
+            text-align: left;
+            min-width: 220px;
         }
 
         .counter-title {
-            font-size: 13px;
-            color: #475569;
-            font-weight: 600;
-            margin-bottom: 6px;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 12.5px;
+            color: #655B49;
+            font-weight: 500;
+            margin-bottom: 4px;
         }
 
         .counter-value {
-            font-size: 28px;
-            font-weight: bold;
-            color: #002147;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Merriweather', Georgia, serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #8C5919;
+            line-height: 1.15;
+            margin-bottom: 4px;
         }
 
         .badge {
-            display: inline-block;
-            font-size: 11px;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-top: 4px;
-            font-weight: 600;
+            display: block;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 11.5px;
+            font-weight: 400;
+            padding: 0;
+            border-radius: 0;
+            margin-top: 2px;
+            background-color: transparent;
+            color: #786C58;
+            font-style: italic;
         }
 
-        .badge-session {
-            background-color: #e0f2fe;
-            color: #0369a1;
-        }
-
-        .badge-local {
-            background-color: #fef3c7;
-            color: #92400e;
+        .badge-session, .badge-local {
+            background-color: transparent;
+            color: #786C58;
         }
     </style>
 </head>
